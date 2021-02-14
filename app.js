@@ -6,13 +6,11 @@ const port = process.env.PORT || 8080;
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const path = require('path');
-const favicon = require('serve-favicon');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const app = express();
 const config = require('./lib/config.js');
 
-mongoose.Promise = Promise;
 mongoose.connect(config.db.url);
 
 const Products = require('./models/Products');
